@@ -11,7 +11,7 @@ export default function TaskLayout({ children }: Props) {
           <div className="main-1">
             <Link href={"/"} passHref={true}>
               <img
-                src="http://localhost:3000/assets/img/logo-realplaza.svg"
+                src="http://localhost:3000/icons/logo-realplaza.svg"
                 alt=""
                 className="img-1"
               />
@@ -50,7 +50,7 @@ export default function TaskLayout({ children }: Props) {
             />
           </div>
           <div className="main-3">
-            <img src="http://localhost:3000/assets/img/user.svg" alt="" />
+            <img src="http://localhost:3000/icons/user.svg" alt="" />
             <span>Mi cuenta</span>
           </div>
         </div>

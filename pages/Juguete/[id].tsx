@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import TaskLayout from "../../components/layout/TaskLayouts";
+import { LineDescription } from "../../components/ui/line-description/LineDescription";
 import { functions } from "../../utils";
 
 // export default function Twoclick() {
@@ -62,7 +63,7 @@ export default function DetailsJuguetes() {
   const loadJuguete = async (id: string) => {
     try {
       const urlApi =
-        process.env.API_URL || "http://localhost:3001/api/Dinos/" + id;
+        process.env.API_URL || "http://localhost:3001/api/dino/" + id;
       const { data } = await axios.get(urlApi);
 
       setJuguete(data);
@@ -182,23 +183,54 @@ export default function DetailsJuguetes() {
                 </div>
               </div>
               <div className="caracteres">
-                <div className="backgr-white">
-                  <div className="alination">
-                    <div className="lines-1">
-                      <div className="widht">Alto (Cm)</div>
-                    </div>
-                    <div className="lines-2">
-                      <div className="widht">17.78</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="backgr-plom">
+                <LineDescription
+                  name={"Alto (cm)"}
+                  value={juguete?.detalles.alto}
+                  classColor={"backgr-plom"}
+                ></LineDescription>
+                <LineDescription
+                  name={"Ancho (cm)"}
+                  value={juguete?.detalles.ancho}
+                  classColor={"backgr-white"}
+                ></LineDescription>
+                <LineDescription
+                  name={"Profundidad (Cm)"}
+                  value={juguete?.detalles.profundidad}
+                  classColor={"backgr-plom"}
+                ></LineDescription>
+                <LineDescription
+                  name={"Color"}
+                  value={juguete?.detalles.color}
+                  classColor={"backgr-white"}
+                ></LineDescription>
+                <LineDescription
+                  name={"Material"}
+                  value={juguete?.detalles.material}
+                  classColor={"backgr-plom"}
+                ></LineDescription>
+                <LineDescription
+                  name={"Peso"}
+                  value={juguete?.detalles.peso}
+                  classColor={"backgr-white"}
+                ></LineDescription>
+                <LineDescription
+                  name={"sonidos"}
+                  value={juguete?.detalles.sonidos}
+                  classColor={"backgr-plom"}
+                ></LineDescription>
+                <LineDescription
+                  name={"Edad mínima recomendada"}
+                  value={juguete?.detalles.edad_minima_recomendada}
+                  classColor={"backgr-white"}
+                ></LineDescription>
+
+                {/* <div className="backgr-plom">
                   <div className="alination">
                     <div className="lines-1">
                       <div className="widht">Ancho (cm)</div>
                     </div>
                     <div className="lines-2">
-                      <div className="widht">26.67</div>
+                      <div className="widht">{juguete?.detalles.ancho}</div>
                     </div>
                   </div>
                 </div>
@@ -208,7 +240,9 @@ export default function DetailsJuguetes() {
                       <div className="widht">Profundidad (Cm)</div>
                     </div>
                     <div className="lines-2">
-                      <div className="widht">7.62</div>
+                      <div className="widht">
+                        {juguete?.detalles.profundidad}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -218,7 +252,7 @@ export default function DetailsJuguetes() {
                       <div className="widht">Color</div>
                     </div>
                     <div className="lines-2">
-                      <div className="widht">Multicolor</div>
+                      <div className="widht">{juguete?.detalles.color}</div>
                     </div>
                   </div>
                 </div>
@@ -228,7 +262,7 @@ export default function DetailsJuguetes() {
                       <div className="widht">Material</div>
                     </div>
                     <div className="lines-2">
-                      <div className="widht">Plástico</div>
+                      <div className="widht">{juguete?.detalles.material}</div>
                     </div>
                   </div>
                 </div>
@@ -238,7 +272,7 @@ export default function DetailsJuguetes() {
                       <div className="widht">Peso</div>
                     </div>
                     <div className="lines-2">
-                      <div className="widht">0.4 kg</div>
+                      <div className="widht">{juguete?.detalles.peso}</div>
                     </div>
                   </div>
                 </div>
@@ -248,7 +282,7 @@ export default function DetailsJuguetes() {
                       <div className="widht">sonidos</div>
                     </div>
                     <div className="lines-2">
-                      <div className="widht">Si</div>
+                      <div className="widht">{juguete?.detalles.sonidos}</div>
                     </div>
                   </div>
                 </div>
@@ -258,10 +292,12 @@ export default function DetailsJuguetes() {
                       <div className="widht">Edad mínima recomendada</div>
                     </div>
                     <div className="lines-2">
-                      <div className="widht">4 años</div>
+                      <div className="widht">
+                        {juguete?.detalles.edad_minima_recomendada}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
