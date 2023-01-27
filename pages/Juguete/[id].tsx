@@ -24,7 +24,7 @@ import { functions } from "../../utils";
 //       console.log(error);
 //     }
 //   };
-interface IJuguete {
+export interface IJuguete {
   id: string;
   name: string;
   image: string;

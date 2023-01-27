@@ -51,7 +51,8 @@ export default function TaskLayout({ children }: Props) {
           </div>
           <div className="main-3">
             <img src="http://localhost:3000/icons/user.svg" alt="" />
-            <span>Mi cuenta</span>
+
+            <Link href={"/authentication/login"}>Mi cuenta</Link>
           </div>
         </div>
       </div>
